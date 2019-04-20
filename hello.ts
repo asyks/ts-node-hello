@@ -2,15 +2,15 @@ import * as http from "http"
 
 const hostname: string = "127.0.0.1";
 
-function main(req: http.IncomingMessage, res: http.ServerResponse) {
+function serve(req: http.IncomingMessage, res: http.ServerResponse) {
   res.statusCode = 200;
   res.setHeader("Content-Type", "text/plain");
   res.end("Hello World\n");
 }
 
-const server: http.Server = http.createServer(main);
+const server: http.Server = http.createServer(serve);
 
-function run() {
+function main() {
   var args: Array<string> = process.argv.slice(2);
   var port: number = 3000;
 
@@ -31,4 +31,4 @@ function run() {
 
 }
 
-run()
+main()

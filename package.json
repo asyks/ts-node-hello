@@ -1,11 +1,11 @@
 {
-  "name": "grist",
+  "name": "ts-node-hello",
   "version": "0.0.1",
   "description": "slackduck Node.js app",
   "author": "Aaron Sykes <aaron@aaronsykes.com>",
-  "main": "grist.js",
+  "main": "hello.js",
   "scripts": {
-    "start": "node grist.js"
+    "start": "node hello.js"
   },
   "dependencies": {
     "@types/node": "10.7.1",
