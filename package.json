@@ -1,0 +1,15 @@
+{
+  "name": "grist",
+  "version": "0.0.1",
+  "description": "slackduck Node.js app",
+  "author": "Aaron Sykes <aaron@aaronsykes.com>",
+  "main": "grist.js",
+  "scripts": {
+    "start": "node grist.js"
+  },
+  "dependencies": {
+    "@types/node": "10.7.1",
+    "typescript": "3.4.3",
+    "ts-node": "8.1.0"
+  }
+}
