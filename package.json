@@ -3,9 +3,14 @@
   "version": "0.0.1",
   "description": "slackduck Node.js app",
   "author": "Aaron Sykes <aaron@aaronsykes.com>",
+  "license": "MIT",
   "main": "hello.js",
   "scripts": {
-    "start": "node hello.js"
+    "start": "npx ts-node hello.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/asyks/ts-node-hello.git"
   },
   "dependencies": {
     "@types/node": "10.7.1",
