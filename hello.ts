@@ -1,16 +1,13 @@
 import * as http from "http"
-
-const hostname: string = "127.0.0.1";
+import * as constants from "./constants"
 
 function serve(req: http.IncomingMessage, res: http.ServerResponse) {
   res.statusCode = 200;
   res.setHeader("Content-Type", "text/plain");
-  res.end("Hello World\n");
+  res.end(constants.helloWorldMsg);
 }
 
-const server: http.Server = http.createServer(serve);
-
-function main() {
+function getPort() {
   var args: Array<string> = process.argv.slice(2);
   var port: number = 3000;
 
@@ -25,8 +22,16 @@ function main() {
     console.log(`Port number not specified, using default ${port}`);
   }
 
-  server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
+  return port
+}
+
+function main() {
+
+  const server: http.Server = http.createServer(serve);
+  var port: number = getPort()
+
+  server.listen(port, constants.hostname, () => {
+    console.log(`Server running at http://${constants.hostname}:${port}/`);
   });
 
 }

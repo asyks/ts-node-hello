@@ -17,5 +17,6 @@ WORKDIR /opt/ts-node-hello
 
 COPY --from=builder /opt/ts-node-hello/node_modules node_modules
 COPY hello.ts /opt/ts-node-hello/hello.ts
+COPY constants.ts /opt/ts-node-hello/constants.ts
 
-CMD npx ts-node hello.ts
+ENTRYPOINT [ "npx", "ts-node", "hello.ts" ]
