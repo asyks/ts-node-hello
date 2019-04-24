@@ -1,10 +1,10 @@
 {
   "name": "ts-node-hello",
   "version": "0.0.1",
-  "description": "slackduck Node.js app",
+  "description": "A simple typescript node hello world",
   "author": "Aaron Sykes <aaron@aaronsykes.com>",
   "license": "MIT",
-  "main": "hello.js",
+  "main": "hello.ts",
   "scripts": {
     "start": "npx ts-node hello.ts"
   },
