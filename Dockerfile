@@ -16,7 +16,14 @@ RUN mkdir -p /opt/ts-node-hello
 WORKDIR /opt/ts-node-hello
 
 COPY --from=builder /opt/ts-node-hello/node_modules node_modules
-COPY hello.ts /opt/ts-node-hello/hello.ts
-COPY constants.ts /opt/ts-node-hello/constants.ts
 
-ENTRYPOINT [ "npx", "ts-node", "hello.ts" ]
+COPY tsconfig.json tsconfig.json
+COPY package.json package.json
+COPY package-lock.json package-lock.json
+
+COPY constants.ts /opt/ts-node-hello/constants.ts
+COPY hello.ts /opt/ts-node-hello/hello.ts
+COPY server.ts /opt/ts-node-hello/server.ts
+COPY test.ts /opt/ts-node-hello/test.ts
+
+ENTRYPOINT [ "npm" ]
