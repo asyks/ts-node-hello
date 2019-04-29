@@ -2,9 +2,9 @@ import * as http from "http"
 import * as constants from "./constants"
 
 export function getPort() {
-  var port: number = constants.defaultPort;
+  let port: number = constants.defaultPort;
 
-  var firstArg: Array<string> = []
+  let firstArg: Array<string> = []
   try {
     firstArg = process.argv.slice(2)[0].split("=");
   }
@@ -12,7 +12,7 @@ export function getPort() {
     console.warn("Failed to parse args...");
   }
 
-  if (firstArg.length == 2 && firstArg[0] == "port") {
+  if (firstArg.length === 2 && firstArg[0] === "port") {
     port = Number(firstArg[1]);
   }
   else {
@@ -22,8 +22,19 @@ export function getPort() {
   return port
 }
 
-export function sendMsg(req: http.IncomingMessage, res: http.ServerResponse) {
-  res.statusCode = 200;
-  res.setHeader("Content-Type", "text/plain");
-  res.end(constants.helloWorldMsg);
+export function handle(req: http.IncomingMessage, res: http.ServerResponse) {
+  let validMethods: Array<string> = ["GET"]
+
+  if (validMethods.indexOf(req.method.toUpperCase()) >= 0) {
+    res.statusCode = 200;
+    res.setHeader("Content-Type", "text/plain");
+
+    res.end(constants.successMessage);
+  }
+  else {
+    res.statusCode = 405;
+    res.setHeader("Content-Type", "text/plain");
+
+    res.end(constants.error405Message);
+  }
 }
