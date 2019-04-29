@@ -6,8 +6,8 @@
   "license": "MIT",
   "main": "hello.ts",
   "scripts": {
-    "start": "npx ts-node server.ts",
-    "test": "npx ts-mocha test.ts"
+    "start": "npx ts-node src/server.ts",
+    "test": "npx ts-mocha test/test.ts"
   },
   "repository": {
     "type": "git",

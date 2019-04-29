@@ -21,9 +21,9 @@ COPY tsconfig.json tsconfig.json
 COPY package.json package.json
 COPY package-lock.json package-lock.json
 
-COPY constants.ts /opt/ts-node-hello/constants.ts
-COPY hello.ts /opt/ts-node-hello/hello.ts
-COPY server.ts /opt/ts-node-hello/server.ts
-COPY test.ts /opt/ts-node-hello/test.ts
+COPY src/constants.ts /opt/ts-node-hello/src/constants.ts
+COPY src/hello.ts /opt/ts-node-hello/src/hello.ts
+COPY src/server.ts /opt/ts-node-hello/src/server.ts
+COPY test/test.ts /opt/ts-node-hello/test/test.ts
 
 ENTRYPOINT [ "npm" ]

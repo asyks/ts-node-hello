@@ -1,6 +1,6 @@
-import * as assert from "assert";
-import * as hello from "./hello";
-import * as constants from "./constants";
+import * as assert from "assert"
+import * as hello from "../src/hello"
+import * as constants from "../src/constants"
 
 describe("hello", function testGetPort() {
   describe(".getPort()", function testDefault() {
