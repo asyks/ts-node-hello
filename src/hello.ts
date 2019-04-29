@@ -9,14 +9,14 @@ export function getPort() {
     firstArg = process.argv.slice(2)[0].split("=");
   }
   catch (TypeError) {
-    console.log("Failed to parse args...");
+    console.warn("Failed to parse args...");
   }
 
   if (firstArg.length == 2 && firstArg[0] == "port") {
     port = Number(firstArg[1]);
   }
   else {
-    console.log(`Port specified improperly, using default ${port}`);
+    console.warn(`Port specified improperly, using default ${port}`);
   }
 
   return port
