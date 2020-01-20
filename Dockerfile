@@ -1,4 +1,4 @@
-FROM node:11.14.0-alpine as builder
+FROM node:13.6.0-alpine as builder
 
 RUN apk add --no-cache ca-certificates
 
@@ -8,7 +8,7 @@ WORKDIR /opt/ts-node-hello
 COPY package.json package.json
 COPY package-lock.json package-lock.json
 
-RUN npm install
+RUN npm install --no-optional
 
 FROM node:11.14.0-alpine
 
