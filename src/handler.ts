@@ -22,19 +22,19 @@ export function getPort() {
   return port
 }
 
-export function handle(req: http.IncomingMessage, res: http.ServerResponse) {
+export function main(req: http.IncomingMessage, res: http.ServerResponse) {
   let validMethods: Array<string> = ["GET"]
 
   if (validMethods.indexOf(req.method.toUpperCase()) >= 0) {
     res.statusCode = 200;
     res.setHeader("Content-Type", "text/plain");
 
-    res.end(constants.successMessage);
+    res.end("Hello World\n");
   }
   else {
-    res.statusCode = 405;
+    res.statusCode = 400;
     res.setHeader("Content-Type", "text/plain");
 
-    res.end(constants.error405Message);
+    res.end("Bad Request\n");
   }
 }

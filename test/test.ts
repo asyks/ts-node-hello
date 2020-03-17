@@ -1,26 +1,26 @@
 import * as assert from "assert"
-import * as hello from "../src/hello"
+import * as handler from "../src/handler"
 import * as constants from "../src/constants"
 
-function noop () {}
+function noop() { }
 
-describe("hello", function() {
-  describe(".getPort()", function() {
-    before( function() {
+describe("handler", function () {
+  describe(".getPort()", function () {
+    before(function () {
       console.warn = noop
     })
-    it(`should return ${constants.defaultPort} when args are not specified`, function() {
-      assert.equal(hello.getPort(), constants.defaultPort);
+    it(`should return ${constants.defaultPort} when args are not specified`, function () {
+      assert.equal(handler.getPort(), constants.defaultPort);
     })
-    it(`should return port from arg when specified`, function() {
+    it(`should return port from arg when specified`, function () {
       var testPort: number = 3001
-      process.argv = ["","",`port=${testPort}`]
-      assert.equal(hello.getPort(), testPort);
+      process.argv = ["", "", `port=${testPort}`]
+      assert.equal(handler.getPort(), testPort);
     })
-    it(`should return port from arg when specified`, function() {
+    it(`should return port from arg when specified`, function () {
       var testPort: number = 3001
-      process.argv = ["","",`${testPort}`]
-      assert.equal(hello.getPort(), constants.defaultPort);
+      process.argv = ["", "", `${testPort}`]
+      assert.equal(handler.getPort(), constants.defaultPort);
     })
   })
 })

@@ -4,10 +4,10 @@
   "description": "A simple typescript node hello world",
   "author": "Aaron Sykes <aaron@aaronsykes.com>",
   "license": "MIT",
-  "main": "hello.ts",
+  "main": "server.ts",
   "scripts": {
-    "start": "npx ts-node src/server.ts",
-    "test": "npx ts-mocha test/test.ts"
+    "start": "ts-node src/server.ts",
+    "test": "ts-mocha test/test.ts"
   },
   "repository": {
     "type": "git",
