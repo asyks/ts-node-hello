@@ -7,7 +7,8 @@
   "main": "server.ts",
   "scripts": {
     "start": "ts-node src/server.ts",
-    "test": "ts-mocha test/test.ts"
+    "test": "ts-mocha --exit test/*",
+    "lint": "eslint . --ext .ts"
   },
   "repository": {
     "type": "git",
@@ -16,7 +17,10 @@
   "dependencies": {
     "@types/node": "13.1.8",
     "typescript": "3.5.3",
-    "ts-node": "8.6.2"
+    "ts-node": "8.6.2",
+    "@typescript-eslint/parser": "2.22.0",
+    "@typescript-eslint/eslint-plugin": "2.22.0",
+    "eslint": "6.8.0"
   },
   "devDependencies": {
     "@types/mocha": "5.2.7",
