@@ -2,7 +2,7 @@ import * as assert from "assert"
 import * as handler from "../src/handler"
 import * as constants from "../src/constants"
 
-function noop() { }
+function noop(): void { }
 
 describe("handler", function () {
   describe(".getPort()", function () {
@@ -13,12 +13,12 @@ describe("handler", function () {
       assert.equal(handler.getPort(), constants.defaultPort);
     })
     it(`should return port from arg when specified`, function () {
-      var testPort: number = 3001
+      const testPort = 3001
       process.argv = ["", "", `port=${testPort}`]
       assert.equal(handler.getPort(), testPort);
     })
     it(`should return port from arg when specified`, function () {
-      var testPort: number = 3001
+      const testPort = 3001
       process.argv = ["", "", `${testPort}`]
       assert.equal(handler.getPort(), constants.defaultPort);
     })

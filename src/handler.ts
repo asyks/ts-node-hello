@@ -1,7 +1,7 @@
 import * as http from "http"
 import * as constants from "./constants"
 
-export function getPort() {
+export function getPort(): number {
   let port: number = constants.defaultPort;
 
   let firstArg: Array<string> = []
@@ -22,10 +22,10 @@ export function getPort() {
   return port
 }
 
-export function main(req: http.IncomingMessage, res: http.ServerResponse) {
-  let validMethods: Array<string> = ["GET"]
+export function main(req: http.IncomingMessage, res: http.ServerResponse): void {
+  const validMethods: Array<string> = ["GET"]
 
-  if (validMethods.indexOf(req.method.toUpperCase()) >= 0) {
+  if (validMethods.includes(req.method.toUpperCase())) {
     res.statusCode = 200;
     res.setHeader("Content-Type", "text/plain");
 
